@@ -26,4 +26,16 @@ public class ArticleDaoImpl implements ArticleDao {
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		return listProduct;
 	}
+	
+	@Transactional
+	public List<BizArticle> loadSQL() {
+		String sql = "select * from BizArticle";
+		List<BizArticle> list = sessionFactory.getCurrentSession().createSQLQuery(sql).addEntity(BizArticle.class).list();
+		return list;
+	}
+	
+	@Transactional
+	public List<BizArticle> loadHQL() {
+		return null;	
+	}
 }
