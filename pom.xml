@@ -35,10 +35,17 @@
 	<dependencies>
 		
 		<!-- 添加struts核心依赖 -->
+		<!-- 去掉javassist，防止和hibernate下载的依赖冲突 -->
 		<dependency>
 		    <groupId>org.apache.struts</groupId>
 		    <artifactId>struts2-core</artifactId>
 		    <version>${struts.version}</version>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>javassist</groupId>
+		            <artifactId>javassist</artifactId>
+		        </exclusion>
+		    </exclusions>
 		</dependency>
 		<dependency>
 		    <groupId>org.apache.struts</groupId>

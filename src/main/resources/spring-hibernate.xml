@@ -69,14 +69,17 @@
         <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
 	        <!-- 配置详细事务处理语义 -->
 	        <tx:attributes>
+	        	<!-- 如果有事务, 那么加入事务, 没有的话新建一个 -->
 	            <tx:method name="insert*" propagation="REQUIRED" />
 	            <tx:method name="update*" propagation="REQUIRED" />
 	            <tx:method name="delete*" propagation="REQUIRED" />
-	
+				
+				<!-- 如果其他bean调用这个方法,在其他bean中声明事务,那就用事务.如果其他  bean没有声明事务,那就不用事务. -->
 	            <tx:method name="get*" propagation="SUPPORTS" read-only="true" />
 	            <tx:method name="find*" propagation="SUPPORTS" read-only="true" />
 	            <tx:method name="select*" propagation="SUPPORTS" read-only="true" />
 	            <tx:method name="load*" propagation="SUPPORTS" read-only="true" />
+	            <tx:method name="list*" propagation="SUPPORTS" read-only="true" />
 	
 	            <!-- 其他采用默认事务方式 -->
 	            <tx:method name="*" />
@@ -93,4 +96,8 @@
 	        <aop:advisor pointcut-ref="transactionPointcut"
 	                advice-ref="transactionAdvice" />
         </aop:config>
+        
+        <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
 </beans>
