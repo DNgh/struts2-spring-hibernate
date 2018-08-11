@@ -2,7 +2,6 @@ package com.min.action;
 
 import java.util.List;
 
-import org.apache.struts2.convention.annotation.Action;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.min.model.BizArticle;

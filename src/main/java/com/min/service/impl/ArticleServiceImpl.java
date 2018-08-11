@@ -31,27 +31,27 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public void updateSession(Long id) {//ÒÑÅäÖÃÉùÃ÷Ê½ÊÂÎñ£¬²»ĞèÒªÊÖ¶¯Ìá½»ÊÂÎñ
+	public void updateSession(Long id) {//å·²é…ç½®å£°æ˜å¼äº‹åŠ¡ï¼Œä¸éœ€è¦æ‰‹åŠ¨æäº¤äº‹åŠ¡
 		BizArticle article = articleDao.loadSession(id);
 		article.setUpdateTime(new Date());
 		articleDao.updateSession(article);
 		
 		BizArticle newArticle = new BizArticle();
-		newArticle.setTitle("×ÏÂŞÀ¼");
-		newArticle.setDescription("×ÏÂŞÀ¼£¨Ñ§Ãû£ºMatthiola incana (L.) R. Br.£©ÊÇÊ®×Ö»¨¿Æ¡¢×ÏÂŞÀ¼Êô¶şÄêÉú»ò¶àÄêÉú²İ±¾¡£");
+		newArticle.setTitle("ç´«ç½—å…°");
+		newArticle.setDescription("ç´«ç½—å…°ï¼ˆå­¦åï¼šMatthiola incana (L.) R. Br.ï¼‰æ˜¯åå­—èŠ±ç§‘ã€ç´«ç½—å…°å±äºŒå¹´ç”Ÿæˆ–å¤šå¹´ç”Ÿè‰æœ¬ã€‚");
 		newArticle.setCreateTime(new Date());
 		articleDao.saveSession(newArticle);
 	}
 
 	@Override
-	public void updateTemplate(Long id) {//ÒÑÅäÖÃÉùÃ÷Ê½ÊÂÎñ£¬²»ĞèÒªÊÖ¶¯Ìá½»ÊÂÎñ
+	public void updateTemplate(Long id) {//å·²é…ç½®å£°æ˜å¼äº‹åŠ¡ï¼Œä¸éœ€è¦æ‰‹åŠ¨æäº¤äº‹åŠ¡
 		BizArticle article = articleDao.loadTemplate(id);
 		article.setUpdateTime(new Date());
 		articleDao.updateTemplate(article);
 		
 		BizArticle newArticle = new BizArticle();
-		newArticle.setTitle("ÂÌÂÜ");
-		newArticle.setDescription("ÂÌÂÜ£¨Ñ§Ãû£ºEpipremnum aureum£©£¬ÊôÓÚ÷è÷ëÒ¶ÊôÖ²Îï£¬´óĞÍ³£ÂÌÌÙ±¾£¬Éú³¤ÓÚÈÈ´øµØÇø£¬³£ÅÊÔ®Éú³¤ÔÚÓêÁÖµÄÑÒÊ¯ºÍÊ÷¸ÉÉÏ£¬Æä²øÈÆĞÔÇ¿£¬Æø¸ù·¢´ï£¬¿ÉÒÔË®ÅàÖÖÖ²¡£");
+		newArticle.setTitle("ç»¿è");
+		newArticle.setDescription("ç»¿èï¼ˆå­¦åï¼šEpipremnum aureumï¼‰ï¼Œå±äºéº’éºŸå¶å±æ¤ç‰©ï¼Œå¤§å‹å¸¸ç»¿è—¤æœ¬ï¼Œç”Ÿé•¿äºçƒ­å¸¦åœ°åŒºï¼Œå¸¸æ”€æ´ç”Ÿé•¿åœ¨é›¨æ—çš„å²©çŸ³å’Œæ ‘å¹²ä¸Šï¼Œå…¶ç¼ ç»•æ€§å¼ºï¼Œæ°”æ ¹å‘è¾¾ï¼Œå¯ä»¥æ°´åŸ¹ç§æ¤ã€‚");
 		newArticle.setCreateTime(new Date());
 		articleDao.saveTemplate(newArticle);
 	}

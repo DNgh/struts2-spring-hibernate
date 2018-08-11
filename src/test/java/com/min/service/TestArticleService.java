@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class) //使用junit4进行测试
-@ContextConfiguration(locations={"classpath:spring-hibernate.xml"}) //加载配置文件 
+@RunWith(SpringJUnit4ClassRunner.class) //浣跨敤junit4杩涜娴嬭瘯
+@ContextConfiguration(locations={"classpath:spring-hibernate.xml"}) //鍔犺浇閰嶇疆鏂囦欢
 public class TestArticleService {
 	@Autowired
 	ArticleService articleService;

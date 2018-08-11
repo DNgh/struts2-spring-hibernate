@@ -19,7 +19,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	private HibernateTemplate template;
 	
 	@Override
-	public List<BizArticle> list() {//criteria查询
+	public List<BizArticle> list() {//criteria鏌ヨ
 		@SuppressWarnings("unchecked")
 		List<BizArticle> listProduct = (List<BizArticle>) sessionFactory
 				.getCurrentSession().createCriteria(BizArticle.class)
@@ -28,7 +28,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 	
 	@Override
-	public List<BizArticle> loadSQL() {//原生sql查询
+	public List<BizArticle> loadSQL() {//鍘熺敓sql鏌ヨ
 		String sql = "select * from biz_article";
 		@SuppressWarnings("unchecked")
 		List<BizArticle> list = sessionFactory.getCurrentSession()
@@ -37,7 +37,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 	
 	@Override
-	public List<BizArticle> loadHQL() {//HQL查询
+	public List<BizArticle> loadHQL() {//HQL鏌ヨ
 		String sql = "select * from biz_article";
 		@SuppressWarnings("unchecked")
 		List<BizArticle> list = sessionFactory.getCurrentSession()
@@ -46,42 +46,42 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 
 	@Override
-	public BizArticle loadSession(Long id) {//session方式加载数据
+	public BizArticle loadSession(Long id) {//session鏂瑰紡鍔犺浇鏁版嵁
 		return (BizArticle)sessionFactory.getCurrentSession().load(BizArticle.class, id);
 	}
 
 	@Override
-	public void saveSession(BizArticle object) {//session方式保存数据
+	public void saveSession(BizArticle object) {//session鏂瑰紡淇濆瓨鏁版嵁
 		sessionFactory.getCurrentSession().save(object);
 	}
 
 	@Override
-	public void updateSession(BizArticle object) {//session方式更新数据
+	public void updateSession(BizArticle object) {//session鏂瑰紡鏇存柊鏁版嵁
 		sessionFactory.getCurrentSession().update(object);
 	}
 
 	@Override
-	public void deleteSession(BizArticle object) {//session方式删除数据
+	public void deleteSession(BizArticle object) {//session鏂瑰紡鍒犻櫎鏁版嵁
 		sessionFactory.getCurrentSession().delete(object);
 	}
 
 	@Override
-	public BizArticle loadTemplate(Long id) {//HibernateTemplate方式读取数据
+	public BizArticle loadTemplate(Long id) {//HibernateTemplate鏂瑰紡璇诲彇鏁版嵁
 		return template.load(BizArticle.class, id);
 	}
 
 	@Override
-	public void saveTemplate(BizArticle object) {//HibernateTemplate方式保存数据
+	public void saveTemplate(BizArticle object) {//HibernateTemplate鏂瑰紡淇濆瓨鏁版嵁
 		template.save(object);
 	}
 
 	@Override
-	public void updateTemplate(BizArticle object) {//HibernateTemplate方式更新数据
+	public void updateTemplate(BizArticle object) {//HibernateTemplate鏂瑰紡鏇存柊鏁版嵁
 		template.update(object);
 	}
 
 	@Override
-	public void deleteTemplate(BizArticle object) {//HibernateTemplate方式删除数据
+	public void deleteTemplate(BizArticle object) {//HibernateTemplate鏂瑰紡鍒犻櫎鏁版嵁
 		template.delete(object);
 	}
 }
