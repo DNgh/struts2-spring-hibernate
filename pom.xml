@@ -23,6 +23,7 @@
 		<aspectj.version>1.8.9</aspectj.version>
 		<!-- mysql驱动版本号 -->
 		<mysql-driver.version>5.1.34</mysql-driver.version>
+		<servlet.version>3.0.1</servlet.version>
 		<!-- tomcat跨域 -->
 		<cors-filter.version>2.5</cors-filter.version>
 		<java-property.version>1.10</java-property.version>
@@ -144,6 +145,13 @@
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>0.9.5-pre10</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>${servlet.version}</version>
+		    <scope>provided</scope>
 		</dependency>
 		
 		<!--解决tomcat部署跨域问题 -->
